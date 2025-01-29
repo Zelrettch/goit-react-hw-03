@@ -10,6 +10,7 @@ const innitials = {
 };
 
 const telPattern = /^\d{3}-\d{3}-\d{3}$/;
+const patternErrMsg = "Number should follow this pattern 111-111-111";
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,7 +20,7 @@ const ContactSchema = Yup.object().shape({
     .required("Required"),
   number: Yup.string()
     .trim()
-    .matches(telPattern, "Number should follow this pattern 111-111-111")
+    .matches(telPattern, patternErrMsg)
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
