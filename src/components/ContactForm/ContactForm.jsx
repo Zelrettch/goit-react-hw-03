@@ -19,7 +19,7 @@ const ContactSchema = Yup.object().shape({
     .required("Required"),
   number: Yup.string()
     .trim()
-    .matches(telPattern, "Number should follow to this pattern 111-111-111")
+    .matches(telPattern, "Number should follow this pattern 111-111-111")
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
